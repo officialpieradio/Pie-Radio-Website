@@ -1,0 +1,13 @@
+{
+  "name": "@packages/types",
+  "version": "0.0.0",
+  "main": "./src/database.ts",
+  "types": "./src/database.ts",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
