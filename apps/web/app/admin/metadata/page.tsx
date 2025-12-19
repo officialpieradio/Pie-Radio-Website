@@ -41,7 +41,7 @@ export default function MetadataPage() {
 
     return (
         <div className="max-w-2xl">
-            <h1 className="text-3xl font-bold text-white mb-6">Update "Now Playing"</h1>
+            <h1 className="text-3xl font-bold text-white mb-6">Update &quot;Now Playing&quot;</h1>
 
             <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-6">
                 <form onSubmit={handleSubmit} className="space-y-6">
