@@ -6,12 +6,12 @@ import { useAuth } from "@/context/auth-context";
 import { Button } from "@/components/ui/button";
 import { Send, User as UserIcon } from "lucide-react";
 import { formatDistanceToNow } from "date-fns";
-import Filter from "bad-words";
+import { Filter } from "bad-words";
 
 interface ChatMessage {
     id: string;
     user_id: string;
-    message: string;
+    content: string;
     created_at: string;
     profiles?: {
         username: string;
@@ -111,7 +111,7 @@ export function ChatBox() {
             .from('chat_messages')
             .insert({
                 user_id: user.id,
-                message: text
+                content: text
             });
 
         if (error) {
@@ -150,7 +150,7 @@ export function ChatBox() {
                                         {msg.profiles?.username || "Anonymous"}
                                     </p>
                                 )}
-                                <p className="text-sm break-words">{msg.message}</p>
+                                <p className="text-sm break-words">{msg.content}</p>
                                 <p className="text-[10px] opacity-50 text-right mt-1">
                                     {formatDistanceToNow(new Date(msg.created_at), { addSuffix: true })}
                                 </p>

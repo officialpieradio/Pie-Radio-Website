@@ -3,7 +3,7 @@ import { View, Text, TextInput, FlatList, KeyboardAvoidingView, Platform, Toucha
 import { SafeAreaView } from "react-native-safe-area-context";
 import { supabase } from "@/lib/supabase"; // Assuming we have a mobile supabase client
 import { Ionicons } from "@expo/vector-icons";
-import Filter from "bad-words";
+import { Filter } from "bad-words";
 import { formatDistanceToNow } from "date-fns";
 
 // We need a way to get Current User in mobile. 
@@ -82,7 +82,7 @@ export default function InteractScreen() {
 
         const { error } = await supabase.from('chat_messages').insert({
             user_id: user.id,
-            message: text
+            content: text
         });
 
         if (error) {
@@ -122,7 +122,7 @@ export default function InteractScreen() {
                                     </Text>
                                 )}
                                 <Text className={`text-base ${isMe ? 'text-white' : 'text-zinc-200'}`}>
-                                    {item.message}
+                                    {item.content}
                                 </Text>
                             </View>
                         </View>
